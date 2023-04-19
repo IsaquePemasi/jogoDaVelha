@@ -10,6 +10,9 @@ namespace Aula
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Maximize a tela");
+            Thread.Sleep(3000);
+            Console.Clear();
             string[,] matriz = new string[3, 3];
             string turno = "X";
 
@@ -29,21 +32,18 @@ namespace Aula
 
             Console.Clear();
 
-            // Começa o jogo.
             while (tentativas < 9)
             {
                 ImprimirTituloJogo();
                 SubstituirValorNaSuaRespectivaCasa(matriz, turno, indexNumeros, jogada);
                 ImprimirMatriz(matriz);
 
-                // Condição de vitória nas Diagonais.
                 if (matriz[0, 0] == matriz[1, 1] && matriz[1, 1] == matriz[2, 2] ||
                     matriz[0, 2] == matriz[1, 1] && matriz[1, 1] == matriz[2, 0])
                 {
                     ImprimirMensagemFimJogoGanhador(turno);
                     break;
                 }
-                // Condição de vitória nas Linhas.
                 if (matriz[0, 0] == matriz[0, 1] && matriz[0, 1] == matriz[0, 2] ||
                     matriz[1, 0] == matriz[1, 1] && matriz[1, 1] == matriz[1, 2] ||
                     matriz[2, 0] == matriz[2, 1] && matriz[2, 1] == matriz[2, 2])
@@ -51,7 +51,6 @@ namespace Aula
                     ImprimirMensagemFimJogoGanhador(turno);
                     break;
                 }
-                // Condição de vitória nas Colunas.
                 if (matriz[0, 0] == matriz[1, 0] && matriz[1, 0] == matriz[2, 0] ||
                     matriz[0, 1] == matriz[1, 1] && matriz[1, 1] == matriz[2, 1] ||
                     matriz[0, 2] == matriz[1, 2] && matriz[1, 2] == matriz[2, 2])
@@ -59,7 +58,6 @@ namespace Aula
                     ImprimirMensagemFimJogoGanhador(turno);
                     break;
                 }
-                // Verificar Turno do Jogador
                 if (turno == "X")
                 {
                     turno = "O";
@@ -76,7 +74,7 @@ namespace Aula
                 while (!indexNumeros.Contains(jogada))
                 {
                     Console.WriteLine();
-                    Console.Write("Jogada invalida. Tente Novamente: ");
+                    Console.Write("Jogada inválida. Tente Novamente: ");
                     jogada = Console.ReadLine();
                 }
 
@@ -96,10 +94,10 @@ namespace Aula
 
         private static void ImprimirTituloJogo()
         {
-            Console.WriteLine();
-            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("   JOGO DA VELHA   ");
-            Console.WriteLine("-------------------");
+
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("                                                                  JOGO DA VELHA   ");
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------");
         }
 
         private static int AlimentarMatriz(string[,] matriz, List<string> indexNumeros, int index)
@@ -131,23 +129,23 @@ namespace Aula
 
         private static void ImprimirMensagemFimJogoGanhador(string turno)
         {
-            Console.WriteLine("\n--------------");
-            Console.WriteLine("Fim de Jogo!!!");
-            Console.WriteLine("--------------");
-            Console.WriteLine($"\nParabéns!!! O ganhador é [{turno}].");
+            Console.WriteLine("\n---------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("                                                                  Fim de Jogo!!!");
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine($"                                                                  \nO jogador [{turno}] ganhou.");
         }
 
         private static void EscolherPosicaoJogada(string turno)
         {
-            Console.Write($"\nVocê quer jogar [{turno}] em qual posição? ");
+            Console.Write($"\nJogador [{turno}], você quer jogar em qual posição? ");
         }
 
         private static void ImprimirMensagemImpate()
         {
-            Console.WriteLine("\n--------------");
-            Console.WriteLine("Fim de Jogo!!!");
-            Console.WriteLine("--------------");
-            Console.WriteLine($"\nQue triste!!! Ninguém ganhou.");
+            Console.WriteLine("\n---------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("                                                                  Fim de Jogo!");
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine($"                                                                  \nNinguém ganhou.");
         }
 
         private static void SubstituirValorNaSuaRespectivaCasa(string[,] matriz, string turno, List<string> indexNumeros, string jogada)
