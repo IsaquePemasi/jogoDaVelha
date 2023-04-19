@@ -27,40 +27,40 @@ namespace Aula
 
             int tentativas = 1;
 
-            ImprimirTituloJogo();
+            TituloJogo();
 
             index = AlimentarMatriz(matriz, indexNumeros, index);
 
-            ImprimirMatriz(matriz);
-            EscolherPosicaoJogada(turno);
+            Matriz(matriz);
+            EscolherPosicao(turno);
             string jogada = Console.ReadLine();
 
             Console.Clear();
 
             while (tentativas < 9)
             {
-                ImprimirTituloJogo();
-                SubstituirValorNaSuaRespectivaCasa(matriz, turno, indexNumeros, jogada);
-                ImprimirMatriz(matriz);
+                TituloJogo();
+                Substituir(matriz, turno, indexNumeros, jogada);
+                Matriz(matriz);
 
                 if (matriz[0, 0] == matriz[1, 1] && matriz[1, 1] == matriz[2, 2] ||
                     matriz[0, 2] == matriz[1, 1] && matriz[1, 1] == matriz[2, 0])
                 {
-                    ImprimirMensagemFimJogoGanhador(turno);
+                    FimDeJogo(turno);
                     break;
                 }
                 if (matriz[0, 0] == matriz[0, 1] && matriz[0, 1] == matriz[0, 2] ||
                     matriz[1, 0] == matriz[1, 1] && matriz[1, 1] == matriz[1, 2] ||
                     matriz[2, 0] == matriz[2, 1] && matriz[2, 1] == matriz[2, 2])
                 {
-                    ImprimirMensagemFimJogoGanhador(turno);
+                    FimDeJogo(turno);
                     break;
                 }
                 if (matriz[0, 0] == matriz[1, 0] && matriz[1, 0] == matriz[2, 0] ||
                     matriz[0, 1] == matriz[1, 1] && matriz[1, 1] == matriz[2, 1] ||
                     matriz[0, 2] == matriz[1, 2] && matriz[1, 2] == matriz[2, 2])
                 {
-                    ImprimirMensagemFimJogoGanhador(turno);
+                    FimDeJogo(turno);
                     break;
                 }
                 if (turno == "X")
@@ -73,7 +73,7 @@ namespace Aula
                 }
 
                 Console.WriteLine();
-                EscolherPosicaoJogada(turno);
+                EscolherPosicao(turno);
                 jogada = Console.ReadLine();
 
                 while (!indexNumeros.Contains(jogada))
@@ -89,15 +89,15 @@ namespace Aula
             }
             if (tentativas == 9)
             {
-                ImprimirTituloJogo();
-                ImprimirMatriz(matriz);
-                ImprimirMensagemImpate();
+                TituloJogo();
+                Matriz(matriz);
+                Empate();
             }
 
             Console.ReadLine();
         }
 
-        private static void ImprimirTituloJogo()
+        private static void TituloJogo()
         {
 
             Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------------------");
@@ -125,7 +125,7 @@ namespace Aula
             return index;
         }
 
-        private static void ImprimirMatriz(string[,] matriz)
+        private static void Matriz(string[,] matriz)
         {
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
@@ -137,7 +137,7 @@ namespace Aula
             }
         }
 
-        private static void ImprimirMensagemFimJogoGanhador(string turno)
+        private static void FimDeJogo(string turno)
         {
             Console.WriteLine("\n---------------------------------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("                                                                  Fim de Jogo!!!");
@@ -235,12 +235,12 @@ namespace Aula
 
         }
 
-        private static void EscolherPosicaoJogada(string turno)
+        private static void EscolherPosicao(string turno)
         {
             Console.Write($"\nJogador [{turno}], você quer jogar em qual posição? ");
         }
 
-        private static void ImprimirMensagemImpate()
+        private static void Empate()
         {
             Console.WriteLine("\n---------------------------------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine("                                                                  Fim de Jogo!");
@@ -337,7 +337,7 @@ namespace Aula
             Console.WriteLine("                                                                      $$$$$$");
         }
 
-        private static void SubstituirValorNaSuaRespectivaCasa(string[,] matriz, string turno, List<string> indexNumeros, string jogada)
+        private static void Substituir(string[,] matriz, string turno, List<string> indexNumeros, string jogada)
         {
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
