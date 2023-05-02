@@ -9,3 +9,5 @@ Para facilitar, faça com que o computador inicie jogando.
 
 Prazo de entrega: 24 / 04
 Forma e envio: Enviar pelo chat o link do github
+
+<img src = "/img/Captura de tela 2023-05-02 134911.png" alt = "acessando">
