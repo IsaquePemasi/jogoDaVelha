@@ -1,13 +1,13 @@
-Desenvolva um jogo da velha utilizando matrizes em C#. Faça com que cada jogador insira a sua jogada em uma interface amigavel. 
-Teste se a posição é válida e caso não seja solicite ao jogador repetir a jogada. Após cada jogada, apresente o tabuleiro com as 
-jogadas representadas por "X" e "O" e faça a verficação se algum jogador venceu.
-Caso seja empate, apresente o resultado na tela. Possilibilite que o jogo seja reinicializado sem a necessidade de reiniciar o jogo. 
+Develop a tic-tac-toe game using arrays in C#. Have each player enter their move in a user-friendly interface.
+Test if the position is valid and if not, ask the player to repeat the move. After each move, present the board with the
+moves represented by "X" and "O" and check if any player won.
+If there is a tie, display the result on the screen. Allow the game to restart without having to restart the game.
 
 
-Desafio extra, pode valer por alguma atividade futura: Faça a implementação de um jogo contra o computador. Faça o possível para evitar que o jogador vença do computador. 
-Para facilitar, faça com que o computador inicie jogando.
+Extra challenge, may be worth some future activity: Implement a game against the computer. Do your best to prevent the player from winning against the computer.
+To make it easier, make the computer start playing.
 
-Prazo de entrega: 24 / 04
-Forma e envio: Enviar pelo chat o link do github
+Delivery time: 24/04
+Method and shipping: Send the github link via chat
 
 <img src = "/img/Captura de tela 2023-05-02 134911.png" alt = "acessando">
