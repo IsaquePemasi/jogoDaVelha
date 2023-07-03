@@ -11,3 +11,5 @@ Delivery time: 24/04
 Method and shipping: Send the github link via chat
 
 <img src = "/img/Captura de tela 2023-05-02 134911.png" alt = "acessando">
+<h2 align="center">Autor</h2>
+<a href="https://github.com/IsaquePemasi/"><img src="https://avatars.githubusercontent.com/u/76749511?v=4" width=115></a>
